@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jyothi Portfolio</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ✅ Navbar -->
+  <nav class="navbar">
+    <div class="logo"><span style="color:#00ffcc;">JYOTHI</span>.S</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ✅ Hero Section -->
+  <section class="hero-section" id="home">
+    <div>
+      <h1>Welcome to Jyothi's Website</h1>
+      <p class="description">
+        I'm a passionate Full Stack Developer with a love for secure and scalable web applications.
+        <br>Specializing in Cybersecurity, Ethical Hacking.
+      </p>
+
+      <div class="typing-skill">
+        <span id="typed-skill"></span>
+      </div>
+    </div>
+    <div class="blurred-bg"></div>
+
+    <div class="hero-image">
+  <img src="assets/pic2.jpg" alt="Profile photo of Jyothi" class="profile-pic" />
+     </div>
+
+
+  </section>
+
+  <!-- ✅ About Section -->
+  <section id="about" class="about-section">
+    <h2 class="section-title">About</h2>
+    <div class="about-container">
+      <div class="about-text">
+        <h3>Hi, I'm Jyothi 👋</h3>
+        <p>
+          I'm a passionate <strong>Full-Stack Developer</strong> with a strong background in <strong>Cybersecurity</strong> and hands-on experience in building secure, scalable web applications.
+        </p>
+        <ul>
+          <li>✔️ Web Development (HTML, CSS, JavaScript, React.js)</li>
+          <li>✔️ DSA using Python</li>
+          <li>✔️ Backend: Node.js, Express</li>
+          <li>✔️ Database: MySQL, PostgreSQL</li>
+          <li>✔️ Ethical Hacking & Network Security</li>
+        </ul>
+        <p>
+          I love working on impactful projects and continuously learning cutting-edge technologies. Let's build something great together!
+        </p>
+        <div class="social-links">
+          <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/jyothi-s-ab801124b" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="mailto:your@email.com"><i class="fas fa-envelope"></i></a>
+          <a href="assets/jyothi_resume.docx" download class="btn-resume">Download Resume</a>
+
+        </div>
+      </div>
+
+      <div class="about-image">
+        <img src="assets/pic2.jpg" alt="Jyothi" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>Hustl Platform</h3>
+        <p>A full-stack service marketplace with real-time booking, login, and categories for tech & non-tech services.</p>
+      </div>
+      <div class="project-card">
+        <h3>ToDo List App</h3>
+        <p>Simple, elegant task tracker using HTML, CSS, and JS for daily productivity.</p>
+      </div>
+      <div class="project-card">
+        <h3>E-Commerce Website</h3>
+        <p>Frontend shopping site with responsive design and product grid layout.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- ✅ Footer -->
+  <footer class="footer">
+    <p>© Jyothivsb@gmail.com| Built with ❤️</p>
+    <div class="social-icons">
+      <a href="https://github.com/yourusername"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/jyothi-s-ab801124b"><i class="fab fa-linkedin"></i></a>
+      
+    </div>
+  </footer>
+
+  <!-- ✅ Typing Skill JavaScript -->
+  <script>
+    const skills = ["Web Development", "DSA using Python", "ReactJS", "Ethical Hacking", "UI/UX Design","c","python"];
+    let skillIndex = 0;
+    let charIndex = 0;
+    const typingElement = document.getElementById("typed-skill");
+
+    function typeSkill() {
+      if (charIndex < skills[skillIndex].length) {
+        typingElement.textContent += skills[skillIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(typeSkill, 100);
+      } else {
+        setTimeout(eraseSkill, 1500);
+      }
+    }
+
+    function eraseSkill() {
+      if (charIndex > 0) {
+        typingElement.textContent = skills[skillIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(eraseSkill, 50);
+      } else {
+        skillIndex = (skillIndex + 1) % skills.length;
+        setTimeout(typeSkill, 300);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      typeSkill();
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
